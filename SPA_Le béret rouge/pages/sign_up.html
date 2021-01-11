@@ -1,0 +1,70 @@
+<div id="signup-wrapper">
+    <div id="signup-logo">
+        <h1>| Le béret rouge |</h1>
+        <span><a href="#login"><img src="../images/bonjour tumbnail.png" alt=""></a></span>
+    </div>
+
+    <div id="sign-up" class="signup">
+        <ul class="signup-form">
+            <li>
+                <label for="signup-firstname">First name</label>
+                <input id="signup-firstname" class="validate" type="text" placeholder="Input firstname"
+                    autocomplete="off">
+                <h2 id="signup-firstname-msg"></h2>
+            </li>
+            <li>
+                <label for="signup-lastname">Last name</label>
+                <input id="signup-lastname" class="validate" type="text" placeholder="Input lastname"
+                    autocomplete="off">
+                <h2 id="signup-lastname-msg"></h2>
+            </li>
+            <li>
+                <label for="signup-username">Username</label>
+                <input id="signup-username" class="validate" type="text" placeholder="Input username"
+                    autocomplete="off">
+                <h2 id="signup-username-msg"></h2>
+            </li>
+            <li>
+                <label for="signup-pass">Password</label>
+                <input id="signup-pass" class="validate" type="password" placeholder="Input password"
+                    autocomplete="off">
+                <h2 id="signup-password-msg"></h2>
+            </li>
+            <li>
+                <label for="confirm-pass">Confirm password</label>
+                <input id="confirm-pass" class="validate" type="password" placeholder="Input password"
+                    autocomplete="off">
+                <h2 id="confirm-password-msg"></h2>
+            </li>
+            <li>
+                <label for="signup-email">Email</label>
+                <input id="signup-email" class="validate" type="text" placeholder="Input email" autocomplete="off">
+                <h2 id="signup-email-msg"></h2>
+            </li>
+            <li>
+                <button id="save" type="button">Save</button>
+                <h2 id="signup-blank-msg"></h2>
+
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    newUser.inputs = document.getElementsByTagName("INPUT");
+    
+    newUser.signup_firstName = document.getElementById("signup-firstname");
+    newUser.signup_lastName = document.getElementById("signup-lastname");
+    newUser.signup_userName = document.getElementById("signup-username");
+
+    newUser.signup_passWord = document.getElementById("signup-pass");
+    newUser.signup_passWord_check = document.getElementById("confirm-pass");
+    newUser.PassCheckMsg = document.getElementById("confirm-password-msg");
+
+    newUser.signup_email = document.getElementById("signup-email");
+    newUser.signup_email_msg = document.getElementById("signup-email-msg");
+
+    newUser.saveUserBtn = document.getElementById("save");
+    newUser.blank_msg = document.getElementById("signup-blank-msg");
+    newUser.init();
+
+</script>

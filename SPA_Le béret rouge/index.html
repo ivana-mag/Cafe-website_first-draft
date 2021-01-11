@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| Le béret rouge |</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/nav-main.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/ValidateLogin.js"></script>
+    <script src="js/saveNewUser.js"></script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+    </div>
+    <div class="preloader">Loading...</div>
+
+    <script>
+        var isLoggedIn = localStorage.getItem('loggedIn');
+        var c = document.getElementById('wrapper');
+        if(isLoggedIn){
+            Router.loadPage('dashboard', c);
+        } else {
+            Router.loadPage('login', c);
+        }
+        Router.watchHashChange(c);
+    </script>
+
+</body>
+
+</html>

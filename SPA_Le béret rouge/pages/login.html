@@ -1,0 +1,42 @@
+<div id="login-wrapper">
+    <div id="logo">
+        <h1>| Le béret rouge |</h1>
+        <span><img src="../images/bonjour tumbnail.png" alt=""></span>
+    </div>
+
+    <div id="login" class="login">
+        <ul class="login-form">
+            <li>
+                <label for="login-username">Username</label>
+                <input id="login-username" class="validate" type="text" placeholder="Input username" autocomplete="off">
+                <h2 id="username-msg"></h2>
+            </li>
+            <li>
+                <label for="login-pass">Password</label>
+                <input id="login-pass" class="validate" type="password" placeholder="Input password" autocomplete="off">
+                <h2 id="password-msg"></h2>
+            </li>
+            <li>
+                <button id="log-in" type="button">Sign in</button>
+                <h2 id="blank-msg"></h2>
+                <button id="sign-up" type="button"><a href="#sign-up">Sign up</a></button>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    ValidateLogin.loginBtn = document.getElementById('log-in');
+    ValidateLogin.c = document.getElementById('wrapper');
+    ValidateLogin.userName = document.getElementById("login-username");
+    ValidateLogin.passWord = document.getElementById("login-pass");
+    ValidateLogin.userName_msg = document.getElementById("username-msg");
+    ValidateLogin.password_msg = document.getElementById("password-msg");
+    ValidateLogin.blank_err = document.getElementById("blank-msg");
+    ValidateLogin.init();
+
+    var signupBtn = document.getElementById("sign-up");
+    signupBtn.addEventListener('click', ()=>{
+        Router.loadPage('sign_up', c);
+    });
+
+</script>

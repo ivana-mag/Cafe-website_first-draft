@@ -1,0 +1,147 @@
+<div id="dashboard-main">
+    <nav id="nav-main">
+        <div class="burger">
+            <img src="../images/3-bar-menu-png-5.png" alt="burger-menu" height="30px" width="30px;">
+        </div>
+        <ul class="nav-links">
+            <span><img src="../images/bonjour tumbnail.png" alt=""></span>
+            <li><a href="http://127.0.0.1:5501/index.html">Home</a></li>
+            <li><a id="signOut" href="http://127.0.0.1:5501/index.html">Sign-out</a></li>
+            <li><a href="http://127.0.0.1:5501/index.html#contact">Contact</a></li>
+            <li><span>| Le béret rouge |</span></li>
+            <li><label id="searchLabel" for="search">Search<input type="text" id="search" autocomplete="off"></label></li>
+
+        </ul>
+    </nav>
+
+    <header class="nav-main-header">
+
+        <ul class="nav-main-header ul">
+            <li class="dropbtn"><a href="#coffee">Coffee</a>
+                <div class="dropdown">
+                    <p><input type="checkbox">Hot coffees</p>
+                    <p><input type="checkbox">Cold coffees</p>
+                    <p><input type="checkbox">Non-dairy coffee</p>
+                    <p><input type="checkbox">Decaf</p>
+                </div>
+            </li>
+            <li class="dropbtn"><a href="#drinks">Drinks</a>
+                <div class="dropdown">
+                    <p><input type="checkbox">Fruit drinks</p>
+                    <p><input type="checkbox">Tea & Infusions</p>
+                    <p><input type="checkbox">Chocolate</p>
+                    <p><input type="checkbox">Alcoholic</p>
+                </div>
+            </li>
+            <li class="dropbtn"><a href="#fruit&veg">Fruit & Veg</a>
+                <div class="dropdown">
+                    <p><input type="checkbox">Fruit salads</p>
+                    <p><input type="checkbox">Salads</p>
+                    <p><input type="checkbox">Smoothies</p>
+                    <p><input type="checkbox">Dips</p>
+                </div>
+            </li>
+
+            <li class="dropbtn"><a href="#bakery">Bakery</a>
+                <div class="dropdown">
+                    <p><input type="checkbox">Bread</p>
+                    <p><input type="checkbox">Savory bakes</p>
+                    <p><input type="checkbox">Pastry</p>
+                    <p><input type="checkbox">Cake</p>
+                </div>
+            </li>
+            <li class="dropbtn"><a href="#dairy&meat">Dairy & Meat</a>
+                <div class="dropdown">
+                    <p><input type="checkbox">Cheese</p>
+                    <p><input type="checkbox">Chicken</p>
+                    <p><input type="checkbox">Pork</p>
+                    <p><input type="checkbox">Beef</p>
+                </div>
+            </li>
+            <li class="dropbtn"><a href="#meals">Ready to eat</a>
+                <div class="dropdown">
+                    <p><input type="checkbox">Daily special</p>
+                    <p><input type="checkbox">Breakfast</p>
+                    <p><input type="checkbox">Lunch</p>
+                    <p><input type="checkbox">Dinner</p>
+                </div>
+            </li>
+            <li><a href="#cart">Your cart</a>
+
+            </li>
+        </ul>
+
+    </header>
+
+
+    <div id="main-container">
+        <div id="page-content">
+            
+            <section id="main-grid">
+                <div class="cards-index"><img src="../images/clem-onojeghuo-crop.jpg" height="300px" width="300px">  
+                </div>
+                <div class="cards-index"><img src="../images/clem-onojeghuo-crop.jpg" height="300px" width="300px">  
+                </div>
+                <div class="cards-index"><img src="../images/clem-onojeghuo-crop.jpg" height="300px" width="300px">  
+                </div>
+            </section>
+        </div>
+    </div>
+
+        <footer id="footer">
+            <div id="footDiv">
+                <ul class="foot-notes">
+                    <h5>About Us</h5>
+                    <li>Our team</li>
+                    <li>Our locations</li>
+                    <li>Where we deliver</li>
+                    <li>Work opportunities </li>
+                    <li>Collaborate with us</li>
+                </ul>
+                <ul class="foot-notes">
+                    <h5>Guides</h5>
+                    <li>Allergens in our menu</li>
+                    <li>Email preference</li>
+                    <li>How to order online</li>
+                    <li>How to pay online</li>
+                </ul>
+                <ul class="foot-notes">
+                    <h5>Links</h5>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#partners">Our partners</a></li>
+                    <li><a href="#menu-brochure">Menu brochure</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    <script>
+        var c = document.getElementById('wrapper');
+        var currPage = Router.getHash();
+        if (currPage) {
+            var c = document.querySelector("page-content")
+            Router.loadPage(currPage, c);
+        }
+
+        var signOut = document.getElementById("signOut")
+        signOut.addEventListener('click', () => {
+            localStorage.removeItem('loggedIn', 1);
+            Router.loadPage('login', c);
+        });
+
+        burgerToggle.burgerBtn = document.querySelector("div.burger");
+        burgerToggle.burger_nav = document.querySelector("#nav-main ul");
+        burgerToggle.nav_links = document.querySelectorAll(".nav-links li")
+        burgerToggle.init();
+
+        dropbtn = document.querySelectorAll(".dropbtn");
+        for (let i = 0; i < dropbtn.length; i++) {
+            dropbtn[i].addEventListener('mouseenter', () => {
+                dropbtn[i].childNodes[2].classList.toggle("active");
+            });
+            dropbtn[i].addEventListener('mouseleave', () => {
+                dropbtn[i].childNodes[2].classList.toggle("active");
+            });
+        }
+
+
+    </script>
